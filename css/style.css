@@ -1,7 +1,7 @@
 
 body {
     background: linear-gradient(to bottom, #ffffff);
-    font-family: 'SF Pro Display', sans-serif;
+    font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
 }
@@ -12,12 +12,12 @@ body {
     justify-content: space-between; /* logo à esquerda, menu à direita */
     align-items: center;
     padding: 15px 30px;
-    background-color: white; /* ou qualquer cor que quiser */
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    background-color: #ffffff; /* fundo branco clean */
+    box-shadow: 0 2px 8px rgba(10, 61, 98, 0.1); /* sombra azul marinho bem leve */
 }
 
 .menu-nav .logo img {
-    height: 50px; /* ajuste do tamanho do logo */
+    height: 80px; /* deixei um pouco menor para mais elegância */
 }
 
 .menu-nav .nav-links {
@@ -28,17 +28,20 @@ body {
 
 .menu-nav .nav-links li a {
     text-decoration: none;
-    font-weight: bold;
-    color: #2d3f2e;
-    padding: 8px 12px;
-    border-radius: 5px;
+    color: #0a3d62; /* azul marinho (cor principal) */
+    padding: 8px 18px;
+    border-radius: 6px;
     transition: all 0.3s ease;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.5px;
 }
 
 .menu-nav .nav-links li a:hover {
-    background-color: #d0effa;
-    color: rgb(112, 101, 101);
+    background-color: #60a3d9; /* azul claro no hover */
+    color: #ffffff; /* texto branco em contraste */
 }
+
 
 .container {
     display: flex;
@@ -49,10 +52,10 @@ body {
 }
 
 .card {
-    background: #fff;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    width: 350px; /* tamanho fixo do card */
+    background: #ffffff;
+    border: 1px solid #eaeaea; /* cinza claro no lugar do #ccc */
+    border-radius: 12px;
+    width: 350px;
     padding-bottom: 10px;
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
@@ -60,7 +63,7 @@ body {
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 20px rgba(10, 61, 98, 0.2); /* sombra azul marinho suave */
 }
 
 .img-card {
@@ -68,26 +71,113 @@ body {
     height: 400px;
     object-fit: cover;
     margin-bottom: 10px;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
 }
 
 .text-info {
-    font-weight: bold;
+    font-weight: 500;
     margin-bottom: 5px;
+    color: #0a3d62; /* azul marinho */
+    font-size: 1.1rem;
 }
 
 .info2 {
     font-size: 0.9rem;
-    color: #555;
+    color: #4a4a4a; /* cinza médio mais clean */
 }
+
+
+.menufooter {
+    background-color: #0a3d62; /* azul marinho */
+    color: #ffffff;
+    padding: 40px 20px 20px;
+    margin-top: 50px;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-logo img {
+    height: 80px;
+    margin-bottom: 10px;
+}
+
+.footer-logo p {
+    font-size: 0.9rem;
+    color: #d0d0d0;
+}
+
+.footer-links h4,
+.footer-contact h4,
+.footer-social h4 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #60a3d9; /* azul claro para destaque */
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin: 8px 0;
+}
+
+.footer-links ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.footer-links ul li a:hover {
+    color: #60a3d9;
+}
+
+.footer-contact p {
+    margin: 6px 0;
+    font-size: 0.9rem;
+}
+
+.footer-social a i {
+    font-size: 28px;
+    margin-right: 12px;
+    color: #ffffff;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.footer-social a i:hover {
+    color: #60a3d9; /* azul claro no hover */
+    transform: scale(1.2);
+}
+
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    margin-top: 30px;
+    font-size: 0.8rem;
+    color: #d0d0d0;
+}
+
 
 /* RESPONSIVO */
 @media (max-width: 768px) {
     .container {
         justify-content: center;
+    }
+
+    .menu-nav {
+        flex-direction: column;
     }
 }
 
@@ -99,5 +189,13 @@ body {
 
     .card {
         width: 90%; /* ocupa quase toda a tela do mobile */
+    }
+
+        .menu-nav {
+        flex-direction: column;
+    }
+
+    .menu-nav .logo img {
+        height: 180px; /* ajuste do tamanho do logo */
     }
 }
