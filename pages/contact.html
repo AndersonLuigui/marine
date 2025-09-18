@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>marine go bsb</title>
+</head>
+<body>
+
+    <div class="menu-nav">
+        <div class="logo">
+            <a href="/index.html">
+                <picture>
+                    <!-- Logo para telas pequenas -->
+                    <source media="(max-width: 768px)" srcset="/img/logo1.png">
+                    <!-- Logo padrão (desktop) -->
+                    <img src="/img/logo2.png" alt="Marine Go BSB">
+                </picture>
+            </a>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="/index.html">Início</a></li>
+            <li><a href="#lanchas">Lanchas</a></li>
+            <li><a href="/pages/about.html">Sobre nós</a></li>
+            <li><a href="/pages/howdoit.html">Como funciona</a></li>
+            <li><a href="/pages/contact.html">Contato</a></li>
+    </div>
+
+
+    <div class="contact-container">
+
+        <form id="contact-form" class="contact-form-box">
+            <div class="form-group">
+                <label for="name">Nome</label>
+                <input type="text" name="name" placeholder="Digite seu nome" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" name="email" placeholder="Digite seu e-mail" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Telefone</label>
+                <input type="tel" name="phone" placeholder="Digite seu telefone" required>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Mensagem</label>
+                <textarea name="message" rows="5" placeholder="Escreva sua mensagem" required></textarea>
+            </div>
+
+            <button type="submit" class="btn-send">Enviar mensagem</button>
+        </form>
+
+
+
+        <!-- Aqui vamos colocar a mensagem de feedback -->
+        <div id="form-feedback" style="display:none; margin-top:15px; padding:10px; border-radius:5px; color:#fff;"></div>
+
+
+    </div>
+
+    <div class="partners-container">
+        <h2>Parcerias</h2>
+        <p class="intro">
+            Quer anunciar sua lancha em nosso site ou propor uma parceria comercial?  
+            Entre em contato conosco e vamos conversar sobre como podemos trabalhar juntos.
+        </p>
+        <a href="mailto:marinegobsb@gmail.com" class="btn-partner">
+            <i class="fa-solid fa-handshake"></i> Fale sobre parcerias
+        </a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script>
+    (function(){
+        emailjs.init("BZACM9jhGq35FE-0K");
+    })();
+
+    const form = document.getElementById('contact-form');
+    const feedback = document.getElementById('form-feedback');
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        emailjs.sendForm('service_2h3bxoh', 'template_7sgirk9', this, 'BZACM9jhGq35FE-0K')
+        .then(() => {
+            feedback.style.display = 'block';
+            feedback.style.backgroundColor = '#28a745'; // verde
+            feedback.innerText = 'Mensagem enviada com sucesso! Em breve retornaremos.';
+            form.reset();
+
+            // sumir após 5 segundos
+            setTimeout(() => { feedback.style.display = 'none'; }, 5000);
+        }, (err) => {
+            feedback.style.display = 'block';
+            feedback.style.backgroundColor = '#dc3545'; // vermelho
+            feedback.innerText = 'Erro ao enviar a mensagem. Tente novamente.';
+            console.error(err);
+
+            setTimeout(() => { feedback.style.display = 'none'; }, 5000);
+        });
+    });
+    </script>
+
+
+
+
+
+    
+
+
+    <div class="menufooter">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="/img/logofooter.png" alt="Marine Go BSB" />
+                <p>Explore Brasília com conforto e estilo.</p>
+            </div>
+
+            <div class="footer-links">
+                <h4>Links</h4>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="#lanchas">Lanchas</a></li>
+                    <li><a href="#servicos">Sobre nós</a></li>
+                    <li><a href="#funcionamento">Como funciona</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Contato</h4>
+                <p>📞 (61) 99143-2674</p>
+                <p>📧 marinegobsb@gmail.com</p>
+            </div>
+
+        <div class="footer-social">
+            <h4>Siga-nos</h4>
+            <a href="https://wa.me/5561991432674"><i class="bi bi-whatsapp"></i></a>
+            <a href="https://www.instagram.com/marine_go_bsb/"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.facebook.com/people/Marine-Go-Bsb/61581153831398/"><i class="bi bi-facebook"></i></a>
+        </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Marine Go BSB. Todos os direitos reservados.</p>
+        </div>
+    </div>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>

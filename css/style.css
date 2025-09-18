@@ -9,22 +9,24 @@ body {
 
 .menu-nav {
     display: flex;
-    justify-content: space-between; /* logo à esquerda, menu à direita */
     align-items: center;
+    justify-content: center; /* centraliza logo + links */
     padding: 15px 30px;
-    background-color: #ffffff; /* fundo branco clean */
-    box-shadow: 0 2px 8px rgba(10, 61, 98, 0.1); /* sombra azul marinho bem leve */
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(10, 61, 98, 0.1);
+    gap: 50px; /* espaço entre logo e links */
+}
+
+.menu-nav .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
 }
 
 .menu-nav .logo img {
     height: 80px; /* deixei um pouco menor para mais elegância */
 }
 
-.menu-nav .nav-links {
-    display: flex;
-    list-style: none;
-    gap: 20px; /* espaçamento entre as abas */
-}
 
 .menu-nav .nav-links li a {
     text-decoration: none;
@@ -203,6 +205,411 @@ body {
     margin-top: 50px;
 }
 
+/* estilização das paginas início */
+
+
+
+/* Layout principal: slide + infos */
+.lancha-page {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Slide */
+.lancha-slide {
+  flex: 1 1 60%; /* ocupa 60% da largura em desktop */
+  height: 70vh;
+  overflow: hidden;
+  border-radius: 12px;
+  position: relative;
+}
+
+.lancha-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.3s ease;
+}
+
+/* Informações + formulário */
+.lancha-info {
+  flex: 1 1 40%; /* ocupa 40% da largura em desktop */
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Botão reserva */
+.lancha-info .btn-primary {
+  margin-top: 10px;
+}
+
+/* ===========================
+   RESPONSIVIDADE
+=========================== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .lancha-page {
+    flex-direction: column; /* slide em cima, infos embaixo */
+    gap: 15px;
+  }
+
+  .lancha-slide,
+  .lancha-info {
+    flex: 1 1 100%;
+    height: 50vh; /* altura reduzida no tablet */
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .lancha-slide {
+    height: 40vh; /* ocupa menos da tela no mobile */
+  }
+
+  .lancha-info {
+    padding: 0 10px;
+  }
+
+  .lancha-info h2 {
+    font-size: 1.2rem;
+  }
+
+  .lancha-info p,
+  .lancha-info label {
+    font-size: 0.9rem;
+  }
+
+  #reserva-form input {
+    font-size: 0.9rem;
+  }
+
+  .lancha-info .btn-primary {
+    font-size: 0.95rem;
+    padding: 8px 16px;
+  }
+}
+
+.lancha-slide {
+  flex: 1 1 60%;
+}
+
+.lancha-slide {
+  width: 100%;
+  max-width: 1000px; /* opcional, limita a largura do slide */
+  height: 70vh;      /* ocupa 70% da altura da tela */
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 12px;
+  position: relative;
+}
+
+
+.lancha-info {
+  flex: 1 1 40%;
+  padding: 40px;
+  background: #f8f9fa;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.lancha-info h2 {
+  color: #0a3d62;
+  margin-bottom: 10px;
+}
+
+.lancha-info p {
+  margin: 8px 0;
+}
+
+.lancha-info .desc {
+  margin-top: 15px;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.lancha-info form {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.lancha-info label {
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: #0a3d62;
+}
+
+.lancha-info input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+}
+
+.lancha-info button {
+  margin-top: 15px;
+}
+
+
+
+/* estilização das paginas fim */
+
+
+
+/* estilização do about */
+
+.about {
+  position: relative;
+  padding: 80px 20px;
+  background: linear-gradient(to bottom, #ffffff, #f9fcff);
+  overflow: hidden;
+}
+
+.about-text {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.about-text h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  color: #0a3d62;
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  color: #4a4a4a;
+  margin-bottom: 40px;
+}
+
+.about-values {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.about-values .value {
+  flex: 1 1 250px;
+  max-width: 280px;
+}
+
+.about-values .value i {
+  font-size: 2.5rem;
+  color: #0a3d62;
+  margin-bottom: 10px;
+}
+
+.about-values h4 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: #0a3d62;
+}
+
+.about-values p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* Ondas animadas */
+.waves {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.wave {
+  position: absolute;
+  bottom: 0;
+  width: 200%;
+  height: 100px;
+  background: rgba(10, 61, 98, 0.08);
+  border-radius: 100%;
+  animation: waveAnim 8s linear infinite;
+}
+
+.wave1 {
+  animation-delay: 0s;
+}
+
+.wave2 {
+  bottom: 10px;
+  animation-delay: -4s;
+  opacity: 0.6;
+}
+
+.wave3 {
+  bottom: 20px;
+  animation-delay: -2s;
+  opacity: 0.3;
+}
+
+@keyframes waveAnim {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+
+
+
+/* estilização do about fim */
+
+
+
+/* estilização da pagina COMO FUNCIONA */
+
+.howdoit-container {
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.howdoit-container h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #0a3d62;
+}
+
+.howdoit-container .intro {
+  color: #555;
+  margin-bottom: 40px;
+  font-size: 1rem;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+}
+
+.step {
+  background: #fff;
+  border-radius: 12px;
+  padding: 25px 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+
+.step:hover {
+  transform: translateY(-5px);
+}
+
+.step i {
+  font-size: 2.2rem;
+  color: #0a3d62;
+  margin-bottom: 15px;
+}
+
+.step h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #0a3d62;
+}
+
+.step p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+}
+/* estilização da pagina COMO FUNCIONA FIM */
+
+
+
+/* ESTILIZAÇÃO DA PÁGINA DE CONTATOS E PARCERIAS */
+
+.contact-container, .partners-container {
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.contact-container h2,
+.partners-container h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #0a3d62;
+}
+
+.intro {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.contact-form-box {
+  background: #fff;
+  padding: 25px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #0a3d62;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 97%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #0a3d62;
+  outline: none;
+}
+
+.btn-send,
+.btn-partner {
+  display: inline-block;
+  background: #0a3d62;
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s ease;
+  margin-top: 15px;
+}
+
+.btn-send:hover,
+.btn-partner:hover {
+  background: #06538a;
+}
+
+.btn-partner i {
+  margin-right: 8px;
+}
+/* ESTILIZAÇÃO DA PÁGINA DE CONTATOS E PARCERIAS FIM */
+
+
 .footer-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -280,30 +687,37 @@ body {
 
 /* RESPONSIVO */
 @media (max-width: 768px) {
-    .container {
-        justify-content: center;
-    }
-
     .menu-nav {
         flex-direction: column;
+        align-items: center; /* centraliza tudo no mobile */
+        gap: 10px;
     }
-}
 
-@media (max-width: 600px) {
-    .container {
+    .menu-nav .nav-links {
         flex-direction: column;
         align-items: center;
-    }
-
-    .card {
-        width: 90%; /* ocupa quase toda a tela do mobile */
-    }
-
-        .menu-nav {
-        flex-direction: column;
+        gap: 10px;
+        width: 100%;
     }
 
     .menu-nav .logo img {
-        height: 180px; /* ajuste do tamanho do logo */
+        height: 150px; /* ajusta o tamanho da logo no mobile */
+    }
+
+    .menu-nav .logo img {
+        content: url('/img/logo2.png'); /* seu logo para mobile */
+        height: 140px;
     }
 }
+
+    @media (max-width: 600px) {
+        .menu-nav .logo img {
+            height: 140px;
+           }
+
+        .menu-nav .nav-links li a {
+            font-size: 16px;
+        }
+}
+
+
