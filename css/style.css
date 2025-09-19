@@ -7,42 +7,85 @@ body {
 }
 
 
+/* Menu principal */
 .menu-nav {
     display: flex;
     align-items: center;
-    justify-content: center; /* centraliza logo + links */
-    padding: 15px 30px;
-    background-color: #ffffff;
-    box-shadow: 0 2px 8px rgba(10, 61, 98, 0.1);
-    gap: 50px; /* espaço entre logo e links */
+    justify-content: space-between;
+    padding: 20px 40px;
+    background-color: #ffffff; /* fundo clean */
+    position: relative;
+    z-index: 1000;
+    font-family: 'Inter', sans-serif;
 }
 
-.menu-nav .nav-links {
+/* Logo */
+.menu-nav .logo img {
+    height: 60px;
+    transition: transform 0.3s ease;
+}
+
+.menu-nav .logo img:hover {
+    transform: scale(1.05);
+}
+
+/* Links do menu */
+.nav-links {
     display: flex;
     list-style: none;
-    gap: 20px;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
 }
-
-.menu-nav .logo img {
-    height: 80px; /* deixei um pouco menor para mais elegância */
-}
-
 
 .menu-nav .nav-links li a {
     text-decoration: none;
-    color: #0a3d62; /* azul marinho (cor principal) */
-    padding: 8px 18px;
-    border-radius: 6px;
-    transition: all 0.3s ease;
-    font-family: 'Inter', sans-serif;
+    color: #0a3d62d3; /* azul marinho */
+    padding: 8px 0;
+    position: relative;
     font-weight: 500;
     letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+}
+
+/* Underline animado */
+.menu-nav .nav-links li a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -3px;
+    left: 0;
+    background-color: #0a3d62;
+    transition: width 0.6s ease;
 }
 
 .menu-nav .nav-links li a:hover {
-    background-color: #60a3d9; /* azul claro no hover */
-    color: #ffffff; /* texto branco em contraste */
+    color: #0a3d62; /* mantém a cor azul */
 }
+
+.menu-nav .nav-links li a:hover::after {
+    width: 100%;
+}
+
+/* Hamburger minimalista */
+.hamburger {
+    display: none; /* aparece apenas em mobile */
+    font-size: 24px;
+    color: #0a3d62;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.hamburger:hover {
+    transform: rotate(90deg);
+}
+
+
+
+
+
+
 
 
 .container {
@@ -262,7 +305,38 @@ body {
     flex: 1 1 100%;
     height: 50vh; /* altura reduzida no tablet */
   }
+
+      .nav-links {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: #ffffff;
+        flex-direction: column;
+        width: 220px;
+        padding: 20px;
+        gap: 20px;
+        border-radius: 0 0 10px 10px;
+        box-shadow: 0 4px 15px rgba(10, 61, 98, 0.1);
+        transform: translateY(-20px);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+    }
+
+    .nav-links.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+
+  
 }
+
 
 /* Mobile */
 @media (max-width: 600px) {
@@ -291,7 +365,36 @@ body {
     font-size: 0.95rem;
     padding: 8px 16px;
   }
+
+
+
 }
+
+/* Responsividade para mobile */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block; /* Mostra o ícone de hamburger no mobile */
+    }
+
+    .nav-links {
+        display: none; /* Esconde o menu por padrão no mobile */
+        position: absolute;
+        top: 100%; /* Posiciona abaixo do header */
+        left: 0;
+        width: 100%; /* Ocupa a largura total */
+        background: #ffffff;
+        padding: 20px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        z-index: 999;
+        flex-direction: column; /* Alinha os itens em coluna */
+        text-align: center; /* Centraliza os links */
+    }
+
+    .nav-links.active {
+        display: flex; /* Mostra o menu quando ativo */
+    }
+}
+
 
 .lancha-slide {
   flex: 1 1 60%;
@@ -355,6 +458,7 @@ body {
 .lancha-info button {
   margin-top: 15px;
 }
+
 
 
 
@@ -685,39 +789,8 @@ body {
 }
 
 
-/* RESPONSIVO */
-@media (max-width: 768px) {
-    .menu-nav {
-        flex-direction: column;
-        align-items: center; /* centraliza tudo no mobile */
-        gap: 10px;
-    }
 
-    .menu-nav .nav-links {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-        width: 100%;
-    }
 
-    .menu-nav .logo img {
-        height: 150px; /* ajusta o tamanho da logo no mobile */
-    }
 
-    .menu-nav .logo img {
-        content: url('/img/logo2.png'); /* seu logo para mobile */
-        height: 140px;
-    }
-}
-
-    @media (max-width: 600px) {
-        .menu-nav .logo img {
-            height: 140px;
-           }
-
-        .menu-nav .nav-links li a {
-            font-size: 16px;
-        }
-}
 
 

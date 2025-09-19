@@ -4,16 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
     <title>marine go bsb</title>
 </head>
 <body>
     <div class="menu-nav">
         <div class="logo">
-            <a href="index.html">
-                <img src="img/logo.png" alt="Marine Go BSB" />
+            <a href="/index.html">
+                <img src="/img/logo.png" alt="Marine Go BSB" />
             </a>
         </div>
 
@@ -21,55 +22,33 @@
             <i class="fa-solid fa-bars"></i>
         </div>
 
-
         <ul class="nav-links">
             <li><a href="/index.html">Início</a></li>
             <li><a href="/pages/about.html">Sobre nós</a></li>
             <li><a href="/pages/howdoit.html">Como funciona</a></li>
             <li><a href="/pages/partner.html">Parcerias</a></li>
             <li><a href="/pages/contact.html">Contato</a></li>
-        </ul>
+
     </div>
 
-    <div class="container">
-
-            <div class="card">
-                <div class="carousel">
-                    <img src="img/cimitarra.jpg" class="img-card active">
-                    <img src="img/cimitarra1.jpg" class="img-card">
-                    <img src="img/cimitarra2.jpg" class="img-card">
-
-                    <button class="carousel-btn prev"><i class="bi bi-chevron-left"></i></button>
-                    <button class="carousel-btn next"><i class="bi bi-chevron-right"></i></button>
-
-                </div>
-
-                <div class="text-info">Cimitarra 34</div>
-                <div class="info2">Capacidade: 11 pessoas + Marinheiro</div>
-                <div class="info2">Tamanho: 12m</div>
-
-
-                <div class="btn-contact">
-                <button class="btn-primary" onclick="enviarMenssagem('Cimitarra 34')">Entrar em contato</button>
-                    <a  href="/pages/cimitarra34.html" class="btn-secondary">Ver mais</a>
-                </div>
-
-
-            </div>
-
-            <div class="card">
-                <img src="img/lancha2.webp" alt="Lancha Marinha" class="img-card">
-                <div class="text-info">Lancha Marinha</div>
-                <div class="info2">Capacidade: 10 pessoas</div>
-                <div class="info2">Tamanho: 14m</div>
-            </div>
-         
+    <div class="partners-container">
+        <h2>Parcerias</h2>
+        <p class="intro">
+            Quer anunciar sua lancha em nosso site ou propor uma parceria comercial?  
+            Entre em contato conosco e vamos conversar sobre como podemos trabalhar juntos.
+        </p>
+        <a onclick="contatoParcerias()" href="mailto:marinegobsb@gmail.com" class="btn-partner">
+            <i class="fa-solid fa-handshake"></i> Fale sobre parcerias
+        </a>
     </div>
 
+
+
+                   
     <div class="menufooter">
         <div class="footer-container">
             <div class="footer-logo">
-                <img src="img/logofooter.png" alt="Marine Go BSB" />
+                <img src="/img/logofooter.png" alt="Marine Go BSB" />
                 <p>Explore Brasília com conforto e estilo.</p>
             </div>
 
@@ -103,6 +82,6 @@
         </div>
     </div>
 
-    <script defer src="/js/script.js"></script>
+    <script src="/js/script.js"></script>
 </body>
 </html>
