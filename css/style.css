@@ -765,12 +765,7 @@ body {
     margin: 6px 0;
     font-size: 0.9rem;
     color: white;
-    text-decoration: none; /* Remove o sublinhado */
-}
 
-.footer-social a {
-    text-decoration: none;  /* Remove o sublinhado */
-    color: white;           /* Muda a cor para branco */
 }
 
 .footer-social a i {
@@ -778,12 +773,14 @@ body {
     margin-right: 12px;
     color: #ffffff;
     transition: color 0.3s, transform 0.3s;
+
 }
 
 .footer-social a i:hover {
     color: #60a3d9; /* azul claro no hover */
     transform: scale(1.2);
 }
+
 
 .footer-bottom {
     text-align: center;
@@ -794,15 +791,7 @@ body {
     color: #d0d0d0;
 }
 
-/* Para links tel e mailto */
-a[href^="tel:"], a[href^="mailto:"], .footer-social a {
-    text-decoration: none;  /* Remove o sublinhado */
-    color: white;           /* Muda a cor para branco */
-}
 
-a:hover, a:focus {
-    color: white;           /* Garante que a cor não mude no hover/foco */
-}
 
 
 
