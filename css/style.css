@@ -765,6 +765,8 @@ body {
     margin: 6px 0;
     font-size: 0.9rem;
     color: white;
+    text-decoration: none; /* Remove o sublinhado */
+
 }
 
 .footer-social a i {
@@ -772,6 +774,8 @@ body {
     margin-right: 12px;
     color: #ffffff;
     transition: color 0.3s, transform 0.3s;
+    text-decoration: none; /* Remove o sublinhado */
+
 }
 
 .footer-social a i:hover {
